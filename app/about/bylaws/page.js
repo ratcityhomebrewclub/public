@@ -4,6 +4,7 @@ import Markdown from 'react-markdown';
 export default async function Bylaws() {
   // const [test, setTest] = useState();
   // const data = await fetchBylaws();
+  // const bylawsPath = '../../bylaws.md';
   // const bylaws = await fetch(bylawsPath).then((response) => response.text()).then((text) => {
   //   setTest(test)
   // });
