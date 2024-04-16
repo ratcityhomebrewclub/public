@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         <div className="flex flex-col items-left justify-between p-24">
           <div id="header">
             <Image
-              src="/header.jpg"
+              src="/images/header.jpg"
               alt="Rat City Homebrew Club Header Image"
               width={1000}
               height={500}
