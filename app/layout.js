@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="flex flex-col justify-between max-w-full px-5">
+        <div className="flex flex-col justify-between max-w-full px-5" >
           <div id="header" className="flex basis-full justify-center py-5  max-w-full">
             <Image
-              // src="/images/header.jpg"
-              src="/images/stock/Firefly mouse making beer 15333.jpg"
+              src="/images/header.jpg"
+              // src="/images/stock/Firefly mouse making beer 15333.jpg"
               alt="Rat City Homebrew Club Header Image"
               sizes="100vw"
               style={

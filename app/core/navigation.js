@@ -2,23 +2,32 @@
 import Link from 'next/link';
 import { useState, useEffect } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
-import { Menu } from '@mui/material';
 
 export const links = [
-  {'name': 'Home', 'href': '/' },
-  {'name': 'About', 'href': '/about' },
-  {'name': 'Calendar', 'href': '/calendar' },
-  {'name': 'Calculators', 'href': '/calculators' },
-  {'name': 'Contact', 'href': '/contact' },
-  {'name': 'Membership', 'href': '/membership' },
-  {'name': 'Useful Links', 'href': '/links' },
+  {'name': 'Home', 'href': '/', 'enabled': true },
+  {'name': 'About', 'href': '/about', 'enabled': true },
+  {'name': 'Calendar', 'href': '/calendar', 'enabled': true },
+  {'name': 'Calculators', 'href': '/calculators', 'enabled': false },
+  {'name': 'Contact', 'href': '/contact', 'enabled': true },
+  {'name': 'Membership', 'href': '/membership', 'enabled': true },
+  {'name': 'Useful Links', 'href': '/links', 'enabled': true },
 ]
+
 const navFlipWidth = 768;
+const getLinks = () => {
+  return links.map((link) => {
+    if(link.enabled){
+      return (
+        <Link key={link.name} href={link.href}>{link.name}</Link>
+      );
+    }
+  });
+}
 
 export function Title(){
   return (
     <div id="title" className="flex flex-col basis-full lg:basis-1/3">
-      <p className="text-4xl font-semibold mb-6">Rat City Homebrew Club</p>
+      <h1 className="mb-6">Rat City Homebrew Club</h1>
       <p className="">Homebrewers Club in Seattle</p>
     </div>
   );
@@ -31,11 +40,7 @@ export function Sidebar(props){
       style={{ 
         visibility: `${props.sideOpen ? "visible" : "hidden"}`, 
       }}>
-        {links.map((link) => {
-          return (
-            <Link key={link.name} href={link.href}>{link.name}</Link>
-          )
-      })}
+        {getLinks()}
     </div>
   );
 }
@@ -47,11 +52,7 @@ export function Navbar(props){
       style={{ 
         visibility: `${props.sideOpen ? "visible" : "hidden"}`, 
       }}>
-      {links.map((link) => {
-        return (
-          <Link key={link.name} href={link.href}>{link.name}</Link>
-        )
-      })}
+      {getLinks()}
     </div>
   );
 }
@@ -95,7 +96,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <div id="navigation" className="flex flex-wrap">
+    <div id="navigation" className="flex flex-wrap lg:px-10 xl:px-40">
       <Title />
       <Sidebar sideOpen={sideOpen} toggle={toggle} />
     
