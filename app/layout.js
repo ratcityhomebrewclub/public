@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from 'next/link';
-import NavBar from "./core/navbar";
+import Navigation from "./core/navigation";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="flex flex-col items-left justify-between">
-          <div id="header" className="flex flex-row justify-center py-5">
+        <div className="flex flex-col justify-between max-w-full px-5">
+          <div id="header" className="flex basis-full justify-center py-5  max-w-full">
             <Image
               // src="/images/header.jpg"
               src="/images/stock/Firefly mouse making beer 15333.jpg"
@@ -32,15 +32,16 @@ export default function RootLayout({ children }) {
               sizes="100vw"
               style={
                 {
-                  maxWidth: "100%",
-                  height: "auto"
+                  maxWidth: "fit-content",
+                  height: "auto",
+                  objectFit: "contain"
                 }
               }
               width={1000}
               height={500}
             />
           </div>
-          <NavBar />
+          <Navigation />
           <div className="flex justify-center min-h-screen">
             {children}
           </div>

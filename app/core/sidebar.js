@@ -15,7 +15,7 @@ const mapStyle = {
 
 export default function SideBar() { 
   return (
-    <div id="sidebar" className="flex flex-col basis-1/5">
+    <div id="sidebar" className="flex flex-col lg:basis-1/5">
       <Socials />
       <div id="meetings" className="py-4">
           <div className="container mx-auto">

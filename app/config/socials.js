@@ -6,6 +6,10 @@ const socials = [{
   "name": "Slack",
   "url": "https://ratcityhomebrewers.slack.com",
   "img": "/images/socials/slack.svg"
+},{
+  "name": "Instagram",
+  "url": "https://www.instagram.com/ratcityhomebrew/",
+  "img": "/images/socials/instagram.svg"
 }]
 
 module.exports = socials;
