@@ -32,7 +32,8 @@ export default function RootLayout({ children }) {
               sizes="100vw"
               style={
                 {
-                  maxWidth: "fit-content",
+                  width: "100%",
+                  // maxWidth: "fit-content",
                   height: "auto",
                   objectFit: "contain"
                 }
@@ -42,7 +43,7 @@ export default function RootLayout({ children }) {
             />
           </div>
           <Navigation />
-          <div className="flex justify-center min-h-screen">
+          <div className="flex justify-center min-h-screen mt-5">
             {children}
           </div>
         </div>

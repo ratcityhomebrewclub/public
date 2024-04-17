@@ -10,12 +10,12 @@ export default function Contact() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <section id="contact" className="">
-        <div className="dues mb-20">
+        <div className="flex flex-col items-center dues mb-10">
           <h2 className="mb-6">Contact Us</h2>
           <Link href="mailto:ratcityhomebrewers@gmail.com">Email Us</Link>
         </div>
         
-        <div className="flex flex-col items-center justify-between">
+        <div className="flex flex-col items-left justify-between">
           <h3 className="mb-6">Meetings</h3>
           <p>We meet the 3rd Thursday, 6:30PM at Sound Homebrew in Georgetown/SODO.</p>
           <p>6505 5th Place S, Seattle, WA 98108</p>
