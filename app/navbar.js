@@ -15,7 +15,7 @@ export const links = [
 
 export default function NavBar() { 
   return (
-    <div id="navbar" className="flex flex-row">
+    <div id="navbar" className="flex flex-row pb-10 px-40">
       <div className="flex flex-col basis-3/5">
         <p className="text-4xl font-semibold mb-6">Rat City Homebrew Club</p>
         <p className="">Homebrewers Club in Seattle</p>

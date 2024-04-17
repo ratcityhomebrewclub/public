@@ -7,7 +7,7 @@ export default function Socials() {
   return (
     // <div className="container mx-auto px-4">
       <div id="Socials" className="py-2">
-        <h2 className="text-3xl font-semibold mb-6">Socials</h2>
+        <h2 className="mb-6">Socials</h2>
         <div className="container mx-auto flex flex-row">
           {socials.map((social) => {
             return (

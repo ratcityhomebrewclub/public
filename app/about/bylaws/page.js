@@ -4,12 +4,10 @@ import Markdown from "@/markdown";
 
 export default function Bylaws() {
 
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <section id="bylaws" className="py-12">
-        <span>Bylaws will appear here!</span>
-        <Markdown url="/bylaws/bylaws.md" />
+    <main className="flex">
+      <section id="bylaws" className="py-12 ">
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vR7183FUdSVVw3anhEJlSmYbjjzYwtYXhk7bt04RpVnG-WdI876cEPto0XiVpntdygdRlTdcje-g6T1/pub?embedded=true"></iframe>
       </section>
     </main>
   );

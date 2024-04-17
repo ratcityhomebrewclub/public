@@ -28,44 +28,31 @@ body {
 
 }
 
-@layer base {
+@layer components {
   h1 {
-    @apply text-4xl font-semibold;
+    @apply text-4xl font-semibold pb-5;
   }
 
   h2 {
-    @apply text-3xl;
-    @apply font-semibold;
+    @apply text-3xl font-semibold pb-2;
   }
 
   h3 {
     @apply text-2xl font-semibold;
   }
 
-  /* h4 {
+  h4 {
+    @apply text-xl font-semibold;
+  }
 
-  } */
-}
+  ul {
+    list-style-type: disc;
+    margin-left: 30px;
+  }
 
-@layer components {
-  .markdown {
-    h1 {
-
-    }
-
-    h2 {
-      
-    }
-
-    ul {
-      list-style-type: disc;
-      margin-left: 30px;
-    }
-
-    ol {
-      list-style-type: decimal;
-      margin-left: 30px;
-    }
+  ol {
+    list-style-type: decimal;
+    margin-left: 30px;
   }
 }
 

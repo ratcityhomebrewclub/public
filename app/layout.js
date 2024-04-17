@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="flex flex-col items-left justify-between p-24">
-          <div id="header" className="flex flex-row justify-center">
+        <div className="flex flex-col items-left justify-between">
+          <div id="header" className="flex flex-row justify-center py-5">
             <Image
               // src="/images/header.jpg"
               src="/images/stock/Firefly mouse making beer 15333.jpg"
@@ -41,7 +41,9 @@ export default function RootLayout({ children }) {
             />
           </div>
           <NavBar />
-          <div className={inter.className}>{children}</div>
+          <div className="flex justify-center min-h-screen">
+            <div className={inter.className}>{children}</div>
+          </div>
         </div>
       </body>
     </html>

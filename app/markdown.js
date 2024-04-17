@@ -1,5 +1,6 @@
 'use client'
 import ReactMarkdown from "react-markdown";
+import remarkBreaks from "remark-breaks";
 import React, { useEffect, useState } from "react";
 
 export default function Markdown(props) {
@@ -14,7 +15,7 @@ export default function Markdown(props) {
 
   return (
     <div className="markdown">
-        <ReactMarkdown>{content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkBreaks]}>{content}</ReactMarkdown>
     </div>
   );
 }

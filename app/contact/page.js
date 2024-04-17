@@ -8,19 +8,19 @@ export default function Contact() {
     allowfullscreen: "" 
   }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <section id="contact" className="">
         <div className="dues mb-20">
-          <h2 className="text-3xl font-semibold mb-6">Contact Us</h2>
+          <h2 className="mb-6">Contact Us</h2>
           <Link href="mailto:ratcityhomebrewers@gmail.com">Email Us</Link>
         </div>
         
         <div className="flex flex-col items-center justify-between">
-          <h3 className="text-2xl font-semibold mb-6">Meetings</h3>
+          <h3 className="mb-6">Meetings</h3>
           <p>We meet the 3rd Thursday, 6:30PM at Sound Homebrew in Georgetown/SODO.</p>
           <p>6505 5th Place S, Seattle, WA 98108</p>
           
-          <h3 className="text-2xl font-semibold mt-6">There are some exceptions:</h3>
+          <h3 className="mt-6">There are some exceptions:</h3>
           <p>In July & August we sometimes have “social meetings” instead of a formal club meeting.</p>
           <p>In December we have a holiday party. Usually at a local brewery.</p>
           <p>And you can often find us around town, you guessed it, enjoying beer at local breweries.</p>

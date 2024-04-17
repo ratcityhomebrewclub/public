@@ -3,6 +3,7 @@
 Bold **bold text**
 Italic _italicized text_
 Blockquote > blockquote
+
 Ordered List
 
 1. First item
@@ -23,4 +24,4 @@ A note[^1]
 
 Link [link](https://www.example.com)
 
-Image ![alt text](https://retool.com/static/f7c3a4ef34744c92d441df532e8d3969/8ca30/revision-history.webp)
+Image ![alt text](/images/stock/barrels.jpg)
