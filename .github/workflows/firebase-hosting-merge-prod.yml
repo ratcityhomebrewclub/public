@@ -5,7 +5,7 @@ name: Deploy to Firebase Prod
 'on':
   push:
     branches:
-      - release
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
