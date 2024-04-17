@@ -24,17 +24,25 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className="flex flex-col items-left justify-between p-24">
-          <div id="header">
+          <div id="header" className="flex flex-row justify-center">
             <Image
-              src="/images/header.jpg"
+              // src="/images/header.jpg"
+              src="/images/stock/Firefly mouse making beer 15333.jpg"
               alt="Rat City Homebrew Club Header Image"
+              sizes="100vw"
+              style={
+                {
+                  maxWidth: "100%",
+                  height: "auto"
+                }
+              }
               width={1000}
               height={500}
             />
           </div>
           <NavBar />
+          <div className={inter.className}>{children}</div>
         </div>
-        <div className={inter.className}>{children}</div>
       </body>
     </html>
   );

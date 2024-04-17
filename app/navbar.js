@@ -7,8 +7,10 @@ export const links = [
   {'name': 'Home', 'href': '/' },
   {'name': 'About', 'href': '/about' },
   {'name': 'Calendar', 'href': '/calendar' },
+  {'name': 'Calculators', 'href': '/calculators' },
   {'name': 'Contact', 'href': '/contact' },
   {'name': 'Membership', 'href': '/membership' },
+  {'name': 'Useful Links', 'href': '/links' },
 ]
 
 export default function NavBar() { 
