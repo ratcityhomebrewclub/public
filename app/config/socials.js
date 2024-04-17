@@ -4,7 +4,7 @@ const socials = [{
   "img": "/images/socials/facebook.svg"
 },{
   "name": "Slack",
-  "url": "ratcityhomebrewers.slack.com",
+  "url": "https://ratcityhomebrewers.slack.com",
   "img": "/images/socials/slack.svg"
 }]
 

@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from 'next/link';
-import NavBar from "./navbar";
+import NavBar from "./core/navbar";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
           </div>
           <NavBar />
           <div className="flex justify-center min-h-screen">
-            <div className={inter.className}>{children}</div>
+            {children}
           </div>
         </div>
       </body>

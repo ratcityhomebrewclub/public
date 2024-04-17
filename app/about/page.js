@@ -1,4 +1,4 @@
-import Markdown from "@/markdown";
+import Markdown from "core/markdown";
 
 export default function About() {
   return (

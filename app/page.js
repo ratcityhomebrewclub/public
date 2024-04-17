@@ -1,5 +1,5 @@
 import About from "./about/page";
-import SideBar from "./sidebar";
+import SideBar from "./core/sidebar";
 
 export default function Home() {
   return (
