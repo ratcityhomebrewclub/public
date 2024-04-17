@@ -24,6 +24,49 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  
+
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl font-semibold;
+  }
+
+  h2 {
+    @apply text-3xl;
+    @apply font-semibold;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  /* h4 {
+
+  } */
+}
+
+@layer components {
+  .markdown {
+    h1 {
+
+    }
+
+    h2 {
+      
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 30px;
+    }
+
+    ol {
+      list-style-type: decimal;
+      margin-left: 30px;
+    }
+  }
 }
 
 @layer utilities {
