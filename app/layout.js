@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="flex flex-col justify-between max-w-full px-5" >
+        <div className="flex flex-col justify-between max-w-full px-5 min-h-screen" >
           <div id="header" className="flex basis-full justify-center py-5  max-w-full">
             <Image
               src="/images/header.jpg"
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
             />
           </div>
           <Navigation />
-          <div className="flex justify-center min-h-screen mt-5">
+          <div className="flex justify-center mt-5">
             {children}
           </div>
           <Footer />
