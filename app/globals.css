@@ -28,6 +28,15 @@ body {
 
 }
 
+#header {
+  background-image: url('/images/header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-position-y: -550px;
+  padding-top: 350px;
+}
+
 #title {
   color: #dd9933
 }
