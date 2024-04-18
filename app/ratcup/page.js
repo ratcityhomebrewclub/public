@@ -1,5 +1,4 @@
 import Markdown from "@/core/markdown";
-import "./ratcup.css";
 
 export default function Links() {
   return (
