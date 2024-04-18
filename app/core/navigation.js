@@ -6,6 +6,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 export const links = [
   {'name': 'Home', 'href': '/', 'enabled': true },
   {'name': 'About', 'href': '/about', 'enabled': true },
+    {'name': 'Bylaws', 'href': '/about/bylaws', 'enabled': false },
+    {'name': 'Club History', 'href': '/about/history', 'enabled': false },
+    {'name': 'Officers', 'href': '/about/officers', 'enabled': false },
   {'name': 'Calendar', 'href': '/calendar', 'enabled': true },
   {'name': 'Calculators', 'href': '/calculators', 'enabled': false },
   {'name': 'Contact', 'href': '/contact', 'enabled': true },

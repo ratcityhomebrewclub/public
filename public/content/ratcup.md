@@ -3,6 +3,7 @@
 The Rat Cup is our best in show competition trophy that is voted on by attendees at our annual end of year potluck.
 
 ## 2023 Winner Jon "Fig" Newton
+![Jon 2023 Rat Cup](/images/ratcup/ratcup23.jpg)
 
 ## 2022 Winner Eitan "Tron" Kaplan
 - Beer Name: Lightkeeper

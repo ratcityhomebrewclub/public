@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 export default function Membership() {
 
@@ -16,7 +17,7 @@ export default function Membership() {
               <input name="cmd" type="hidden" value="_s-xclick" />
               <input name="hosted_button_id" type="hidden" value="GZC3F78SXSC5A" />
               <input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" type="image" />
-              <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
+              <Image src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
             </form>
           </div>
           <div className="flex flex-col items-center justify-between">
@@ -25,7 +26,7 @@ export default function Membership() {
               <input name="cmd" type="hidden" value="_s-xclick" />
               <input name="hosted_button_id" type="hidden" value="RJ559WGQ6ZELW" />
               <input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" type="image" />
-              <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
+              <Image src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
             </form>
           </div>
         </div>
