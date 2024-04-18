@@ -10,7 +10,7 @@ export default function Membership() {
         </div>
         
         <div className="flex flex-row items-center justify-between">
-          <div>
+          <div className="flex flex-col items-center justify-between">
             <h3 className="mb-6">1 Year Membership</h3>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input name="cmd" type="hidden" value="_s-xclick" />
@@ -19,7 +19,7 @@ export default function Membership() {
               <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />
             </form>
           </div>
-          <div>
+          <div className="flex flex-col items-center justify-between">
             <h3 className="mb-6">1 Year Membership (Auto-Renew)</h3>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input name="cmd" type="hidden" value="_s-xclick" />
