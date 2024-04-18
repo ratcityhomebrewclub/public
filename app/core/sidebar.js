@@ -1,10 +1,5 @@
-
-import { Inter } from "next/font/google";
-import Image from "next/image";
-import Link from 'next/link';
-
 import Socials from "./socials";
-const mapStyle = {
+const calendarStyle = {
   border: "solid 1px #777",
   width: "auto",
   height: "300px",
@@ -26,7 +21,7 @@ export default function SideBar() {
       <div id="nextevent" className="py-4">
           <div className="container mx-auto">
               <h2 className="mb-6">Upcoming Events</h2>
-              <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&bgcolor=%23ffffff&mode=AGENDA&src=cmF0Y2l0eWhvbWVicmV3ZXJzQGdtYWlsLmNvbQ&color=%23D50000" style={mapStyle}></iframe>
+              <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&bgcolor=%23ffffff&mode=AGENDA&src=cmF0Y2l0eWhvbWVicmV3ZXJzQGdtYWlsLmNvbQ&color=%23D50000" style={calendarStyle}></iframe>
           </div>
       </div>
     </div>

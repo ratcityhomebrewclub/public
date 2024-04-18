@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from 'next/link';
 import Navigation from "./core/navigation";
 import "./globals.css";
+import Footer from "./core/footer";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +48,7 @@ export default function RootLayout({ children }) {
           <div className="flex justify-center min-h-screen mt-5">
             {children}
           </div>
+          <Footer />
         </div>
       </body>
     </html>

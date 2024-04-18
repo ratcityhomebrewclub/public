@@ -1,7 +1,5 @@
 import Markdown from "@/core/markdown";
 import Socials from "core/socials";
-import Image from "next/image";
-import Link from 'next/link';
 
 
 

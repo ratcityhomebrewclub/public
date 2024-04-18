@@ -28,21 +28,32 @@ body {
 
 }
 
+#title {
+  color: #dd9933
+}
+
 @layer components {
   h1 {
     @apply text-4xl font-semibold pb-5;
+    margin-bottom: 5px;
   }
 
   h2 {
     @apply text-3xl font-semibold pb-2;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   h3 {
     @apply text-2xl font-semibold;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   h4 {
     @apply text-xl font-semibold;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   ul {

@@ -10,6 +10,7 @@ export const links = [
   {'name': 'Calculators', 'href': '/calculators', 'enabled': false },
   {'name': 'Contact', 'href': '/contact', 'enabled': true },
   {'name': 'Membership', 'href': '/membership', 'enabled': true },
+  {'name': 'The Rat Cup', 'href': '/ratcup', 'enabled': true },
   {'name': 'Useful Links', 'href': '/links', 'enabled': true },
 ]
 
@@ -27,8 +28,8 @@ const getLinks = () => {
 export function Title(){
   return (
     <div id="title" className="flex flex-col basis-full lg:basis-1/3">
-      <h1 className="mb-6">Rat City Homebrew Club</h1>
-      <p className="">Homebrewers Club in Seattle</p>
+      <h1 className="">Rat City Homebrew Club</h1>
+      <p className="">Homebrewers club in Seattle</p>
     </div>
   );
 }
