@@ -24,7 +24,7 @@ export default function Contact() {
           <p>In July & August we sometimes have “social meetings” instead of a formal club meeting.</p>
           <p>In December we have a holiday party. Usually at a local brewery.</p>
           <p>And you can often find us around town, you guessed it, enjoying beer at local breweries.</p>
-          <p>For club meetings please bring your own tasting glass (noone likes to drink out of plastic!) and of course your delicious homebrew for sampling!</p>
+          <p>For club meetings please bring your own tasting glass (no one likes to drink out of plastic!) and of course your delicious homebrew for sampling!</p>
         </div>
 
         <div className="flex flex-col items-center justify-between mt-5">
