@@ -4,16 +4,17 @@ import { useEffect } from "react";
 
 export default function Banner() {
   useEffect(() => {
-    console.log("Component Mounted");
+    const startPos = (window.innerWidth > 750) ? -350 : -200 ;
+    document.querySelector("#header").style.backgroundPositionY = startPos + "px";
     window.addEventListener("scroll", function () {
-      const parallax = document.querySelector("#header");
       let offset = window.scrollY;
-      parallax.style.backgroundPositionY = offset * 0.7 - 550 + "px";
+      const parallax = document.querySelector("#header");
+      parallax.style.backgroundPositionY = startPos + offset * 0.7 + "px";
     });
   });
 
   return (
-    <div id="header" className="flex basis-full justify-center mb-6 max-w-full">
+    <div id="header" className="mb-6 max-w-full">
     </div>
   );
 }

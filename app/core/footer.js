@@ -16,15 +16,15 @@ export default function Footer() {
   ]
 
   return (
-    <div id="footer" className="flex flex-row lg:basis-4/5 align-center items-center justify-center py-10">
+    <div id="footer" className="flex flex-wrap lg:basis-4/5 align-center items-center justify-center py-10">
       {items.map((item) => {
         return (
-          <Link key={item.name} href={item.url} className="px-2">
+          <Link key={item.name} href={item.url} className="px-2 flex">
             <Image
               src={item.img}
               alt={item.name}
               width={200}
-              height= {200}
+              height={200}
             />
           </Link>
         );
