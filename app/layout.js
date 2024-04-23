@@ -4,8 +4,8 @@ import "./globals.css";
 import Footer from "./core/footer";
 import Banner from "./core/banner";
 
-
 const inter = Inter({ subsets: ["latin"] });
+// Import the functions you need from the SDKs you need
 
 export const metadata = {
   title: "Rat City Homebrew Club",

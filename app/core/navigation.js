@@ -1,20 +1,21 @@
 'use client'
 import Link from 'next/link';
 import { useState, useEffect } from "react";
+import { initGA, logPageView } from './analytics';
 import MenuIcon from '@mui/icons-material/Menu';
 
 export const links = [
-  {'name': 'Home', 'href': '/', 'enabled': true },
-  {'name': 'About', 'href': '/about', 'enabled': true },
-    {'name': 'Bylaws', 'href': '/about/bylaws', 'enabled': false },
-    {'name': 'Club History', 'href': '/about/history', 'enabled': false },
-    {'name': 'Officers', 'href': '/about/officers', 'enabled': false },
-  {'name': 'Calendar', 'href': '/calendar', 'enabled': true },
-  {'name': 'Calculators', 'href': '/calculators', 'enabled': false },
-  {'name': 'Contact', 'href': '/contact', 'enabled': true },
-  {'name': 'Membership', 'href': '/membership', 'enabled': true },
-  {'name': 'The Rat Cup', 'href': '/ratcup', 'enabled': true },
-  {'name': 'Useful Links', 'href': '/links', 'enabled': true },
+  {'name': 'Home', 'href': '/', 'level': 0, 'enabled': true },
+  {'name': 'About', 'href': '/about', 'level': 0, 'enabled': true },
+    {'name': 'Bylaws', 'href': '/about/bylaws', 'level': 1, 'enabled': false },
+    {'name': 'Club History', 'href': '/about/history', 'level': 1, 'enabled': false },
+    {'name': 'Officers', 'href': '/about/officers', 'level': 1, 'enabled': false },
+  {'name': 'Calendar', 'href': '/calendar', 'level': 0, 'enabled': true },
+  {'name': 'Calculators', 'href': '/calculators', 'level': 0, 'enabled': false },
+  {'name': 'Contact', 'href': '/contact', 'level': 0, 'enabled': true },
+  {'name': 'Membership', 'href': '/membership', 'level': 0, 'enabled': true },
+  {'name': 'The Rat Cup', 'href': '/ratcup', 'level': 0, 'enabled': true },
+  {'name': 'Useful Links', 'href': '/links', 'level': 0, 'enabled': true },
 ]
 
 const navFlipWidth = 768;
@@ -22,7 +23,7 @@ const getLinks = () => {
   return links.map((link) => {
     if(link.enabled){
       return (
-        <Link key={link.name} href={link.href}>{link.name}</Link>
+        <Link className={"link-" + link.level} key={link.name} href={link.href}>{link.name}</Link>
       );
     }
   });
@@ -80,6 +81,11 @@ export default function Navigation() {
 
   useEffect(() => {
     window.addEventListener("resize", updateWidth);
+    window.addEventListener("scroll", changeNavButton);
+    
+    initGA(); // Initialize Google Analytics
+    logPageView(); // Log the initial page view
+
     updateWidth();
   }, []);
 
@@ -95,9 +101,6 @@ export default function Navigation() {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", changeNavButton);
-  }, []);
 
   return (
     <div id="navigation" className="flex flex-wrap lg:px-10 xl:px-40">

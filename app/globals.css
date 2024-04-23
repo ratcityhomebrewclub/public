@@ -77,6 +77,10 @@ body {
   }
 }
 
+.link-1 {
+  padding-left: 10px;
+}
+
 .markdown img {
   /* width: 30%; */
   @apply xl:max-w-lg;
