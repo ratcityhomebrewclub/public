@@ -1,8 +1,7 @@
 import ReactGA from 'react-ga';
-import 'dotenv/config'
 
 export const initGA = () => {
-  ReactGA.initialize(process.env.FIREBASE_MEASUREMENT_ID); // Replace with your tracking ID
+  ReactGA.initialize(process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID); // Replace with your tracking ID
 };
 
 export const logPageView = () => {
