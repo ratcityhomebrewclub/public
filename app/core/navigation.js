@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import { useState, useEffect } from "react";
-import { initGA, logPageView } from './analytics';
+
 import MenuIcon from '@mui/icons-material/Menu';
 
 export const links = [
@@ -82,9 +82,6 @@ export default function Navigation() {
   useEffect(() => {
     window.addEventListener("resize", updateWidth);
     window.addEventListener("scroll", changeNavButton);
-    
-    initGA(); // Initialize Google Analytics
-    logPageView(); // Log the initial page view
 
     updateWidth();
   }, []);
