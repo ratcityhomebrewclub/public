@@ -74,7 +74,6 @@ export default function Navigation() {
 
   const updateWidth = () => {
     const newWidth = window.innerWidth;
-    console.log("Setting width " + newWidth)
     setWidth(newWidth);
     changeNavButton();
   };

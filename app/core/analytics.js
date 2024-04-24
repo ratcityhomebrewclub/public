@@ -5,7 +5,6 @@ import ReactGA from 'react-ga';
 
 export default function Analytics() {
   const initGA = () => {
-    console.log("Loading " + process.env.NEXT_PUBLIC_TEST_ENV)
     ReactGA.initialize(process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID); // Replace with your tracking ID
   };
   
