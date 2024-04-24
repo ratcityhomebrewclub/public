@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import { useState, useEffect } from "react";
-
+import { logPageView } from './analytics';
 import MenuIcon from '@mui/icons-material/Menu';
 
 export const links = [
@@ -23,7 +23,7 @@ const getLinks = () => {
   return links.map((link) => {
     if(link.enabled){
       return (
-        <Link className={"link-" + link.level} key={link.name} href={link.href}>{link.name}</Link>
+        <Link className={"link-" + link.level} key={link.name} href={link.href} onClick={logPageView}>{link.name}</Link>
       );
     }
   });
