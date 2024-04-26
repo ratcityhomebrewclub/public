@@ -1,5 +1,6 @@
 ## General
 [American Homebrewers Association](https://www.homebrewersassociation.org/)
+[Club Feedback Form](https://forms.gle/NpVfymkNoZVMAhXY9)
 [BJCP Style Guidelines](https://www.bjcp.org/bjcp-style-guidelines/)
 [Washington Homebrewers Association](http://www.wahomebrewers.org/)
 
