@@ -1,6 +1,6 @@
 import Markdown from "@/core/markdown";
 
-export default function Links() {
+export default function Awards() {
   return (
     <main className="flex ">
       <section id="ratcup" className="py-12">

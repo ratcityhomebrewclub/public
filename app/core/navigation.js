@@ -7,16 +7,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 export const links = [
   {'name': 'Home', 'href': '/', 'level': 0, 'enabled': true },
   {'name': 'About', 'href': '/about', 'level': 0, 'enabled': true },
-    {'name': 'Bylaws', 'href': '/about/bylaws', 'level': 1, 'enabled': false },
-    {'name': 'Club History', 'href': '/about/history', 'level': 1, 'enabled': false },
-    {'name': 'Officers', 'href': '/about/officers', 'level': 1, 'enabled': false },
+    {'name': 'Bylaws', 'href': '/about/bylaws', 'level': 1, 'enabled': true },
+    {'name': 'Club History', 'href': '/about/history', 'level': 1, 'enabled': true },
+    {'name': 'Officers', 'href': '/about/officers', 'level': 1, 'enabled': true },
   {'name': 'Calendar', 'href': '/calendar', 'level': 0, 'enabled': true },
   {'name': 'Calculators', 'href': '/calculators', 'level': 0, 'enabled': false },
   {'name': 'Contact', 'href': '/contact', 'level': 0, 'enabled': true },
   {'name': 'Membership', 'href': '/membership', 'level': 0, 'enabled': true },
+  {'name': 'Awards', 'href': '/awards', 'level': 0, 'enabled': true },
   {'name': 'The Rat Cup', 'href': '/ratcup', 'level': 0, 'enabled': true },
   {'name': 'Useful Links', 'href': '/links', 'level': 0, 'enabled': true },
 ]
+
+
 
 const navFlipWidth = 768;
 const getLinks = () => {
@@ -65,28 +68,31 @@ export function Navbar(props){
 export default function Navigation() { 
   // Functionality for opening/closing nav
   const [sideOpen, setSideOpen] = useState(false);
+  //update the size of the logo when the size of the screen changes
+  const [width, setWidth] = useState(0);
+  // // change between the logo and the button when the user scrolls
+  const [showButton, setShowButton] = useState(false);
+  
   const toggle = () => {
     setSideOpen(!sideOpen);
   }
-
-  //update the size of the logo when the size of the screen changes
-  const [width, setWidth] = useState(0);
-
+  
   const updateWidth = () => {
-    const newWidth = window.innerWidth;
-    setWidth(newWidth);
+    setWidth(window.innerWidth);
     changeNavButton();
   };
 
   useEffect(() => {
     window.addEventListener("resize", updateWidth);
     window.addEventListener("scroll", changeNavButton);
-
     updateWidth();
+
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+      window.removeEventListener("scroll", changeNavButton);
+    };
   }, []);
 
-  // // change between the logo and the button when the user scrolls
-  const [showButton, setShowButton] = useState(false);
 
   const changeNavButton = () => {
     if (window.scrollY >= 400 || window.innerWidth < navFlipWidth) {
