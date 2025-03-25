@@ -1,5 +1,17 @@
 # 2024 Awards
 
+### [2024 Oregon Brew Crew Fall Classic](https://fallclassic.brewingcompetitions.com/)
+
+#### Lake Burien English Porter
+Brewer: Dan Dupre & Katja Jacob
+Style: 13C: English Porter
+Medal: Silver
+
+#### Dubbel Trubbel 2024
+Brewer: Katja Jacob
+Style: 26B: Belgian Dubbel
+Medal: Silver
+
 ### [Lights Out! Dark Beers Only 2024](https://reggiebeer.com/ReggieWeb.php?Web=1000876)
 
 #### S~H Barelywine
@@ -60,3 +72,23 @@ Medal: Silver
 
 # 2023
 ### [Lights Out! Dark Beers Only](https://reggiebeer.com/ReggieWeb.php?Web=1000794)
+
+#### Mildly Burien
+Brewer: Scott Howell
+Style: 13A: Dark Mild
+Medal: Bronze
+
+#### Burien merica brown
+Brewer: Scott Howell
+Style: 19C: American Brown Ale
+Medal: Bronze
+
+#### Elk Meadows Stout
+Brewer: Camp Fellin
+Style: 15B: Irish Stout
+Medal: Bronze
+
+#### Off the Rails Wild Ale
+Brewer: Jon Newton
+Style: 28C: Wild Specialty Beer
+Medal: Bronze
