@@ -6,12 +6,14 @@ export default function Footer() {
     {
       "name": "WAHA",
       "img": "/images/waha.png",
-      "url":  "https://www.wahomebrewers.org/"
+      "url":  "https://www.wahomebrewers.org/",
+      "class": ""
     },
     {
       "name": "Sound Homebrew Supply",
       "img": "/images/shs.png",
-      "url":  "https://soundhomebrew.com/"
+      "url":  "https://soundhomebrew.com/",
+      "class": "white-background"
     }
   ]
 
@@ -23,6 +25,7 @@ export default function Footer() {
             <Image
               src={item.img}
               alt={item.name}
+              className={item.class}
               width={200}
               height={200}
             />
