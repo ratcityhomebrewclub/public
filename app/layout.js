@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           <Analytics />
           <Banner />
           <Navigation />
-          <div className="flex justify-center mt-5">
+          <div className="flex justify-center">
             {children}
           </div>
           <Footer />

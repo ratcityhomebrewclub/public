@@ -3,7 +3,7 @@
 ### [2024 Oregon Brew Crew Fall Classic](https://fallclassic.brewingcompetitions.com/)
 
 #### Lake Burien English Porter
-Brewer: Dan Dupre & Katja Jacob
+Brewer: Dan Dupré & Katja Jacob
 Style: 13C: English Porter
 Medal: Silver
 

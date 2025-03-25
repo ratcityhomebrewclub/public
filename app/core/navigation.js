@@ -56,9 +56,9 @@ export function Sidebar(props){
 export function Navbar(props){
   return(
     <div id="navbar"
-      className="flex flex-row basis-full lg:basis-2/3 text-sm items-center justify-between"
+      className="flex flex-row basis-full lg:basis-2/3 text-sm items-center justify-between overflow-auto"
       style={{ 
-        visibility: `${props.sideOpen ? "visible" : "hidden"}`, 
+        visibility: `${props.sideOpen ? "visible" : "hidden"}`
       }}>
       {getLinks()}
     </div>
