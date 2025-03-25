@@ -17,7 +17,9 @@ export default function Contact() {
         
         <div className="flex flex-col items-left justify-between">
           <h3 className="mb-6">Meetings</h3>
-          <p>We meet the 3rd Thursday, 6:30PM at Sound Homebrew in Georgetown/SODO.</p>
+          <p>The first week of the month we have a club happy hour at a local brewery. Please check out the calendar for date and location as it often changes.</p>
+          <br />
+          <p>Our official meetings are the 3rd Thursday of every month, 6:30PM at Sound Homebrew in Georgetown/SODO.</p>
           <p>6505 5th Place S, Seattle, WA 98108</p>
           
           <h3 className="mt-6">There are some exceptions:</h3>

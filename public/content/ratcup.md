@@ -2,6 +2,12 @@
 
 The Rat Cup is our best in show competition trophy that is voted on by attendees at our annual end of year potluck.
 
+## 2024 Winner Scott Howell
+- Beer Name: Just The Tip
+- Style: Brown Ale with spruce tips
+
+![Scott 2024 Rat Cup](/images/ratcup/ratcup_24.jpeg)
+
 ## 2023 Winner Jon "Fig" Newton
 - Beer Name: Off the Rails Wild Ale
 - Style: Barley wine with wild elements in the Flanders Red style

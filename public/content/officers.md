@@ -1,15 +1,30 @@
 # Club Officers
 
-The club officers for 2023:
+The club officers for 2025:
 
-## President
+### President
 Gino Clement
 
-## Vice President
+### Vice President
+Christian Holton
+
+### Secretary
+Camp Fellin
+
+### Treasurer
+Molly Smith
+
+## Steering Committee
+
+### Secretary of Events & Member Recruitment
+Jon "Fig" Newton
+
+### Secretary of Education
+Professor John Smith
+
+### Secretary of Solera & Wild Projects
+Katja Jacob
+
+### Officers Emeritus
 Eitan "Tron" Kaplan
-
-## Secretary
 Adam Schechter
-
-## Treasurer
-John Smith (...but it's really Molly)

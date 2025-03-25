@@ -7,8 +7,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 export const links = [
   {'name': 'Home', 'href': '/', 'level': 0, 'enabled': true },
   {'name': 'About', 'href': '/about', 'level': 0, 'enabled': true },
-    {'name': 'Bylaws', 'href': '/about/bylaws', 'level': 1, 'enabled': true },
-    {'name': 'Club History', 'href': '/about/history', 'level': 1, 'enabled': true },
+    {'name': 'Bylaws', 'href': '/about/bylaws', 'level': 1, 'enabled': false },
+    {'name': 'Club History', 'href': '/about/history', 'level': 1, 'enabled': false },
     {'name': 'Officers', 'href': '/about/officers', 'level': 1, 'enabled': true },
   {'name': 'Calendar', 'href': '/calendar', 'level': 0, 'enabled': true },
   {'name': 'Calculators', 'href': '/calculators', 'level': 0, 'enabled': false },
