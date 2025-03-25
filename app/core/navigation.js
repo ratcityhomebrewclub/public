@@ -44,7 +44,7 @@ export function Title(){
 export function Sidebar(props){
   return (
     <div id="sidebar"
-      className="sidebar-container flex flex-col fixed overflow-hidden justify-center mt-[120px] p-5 top-10 right-5 z-10 bg-gray-700/80"
+      className="sidebar-container flex flex-col fixed overflow-hidden justify-center mt-[120px] p-5 top-10 left-10 z-10 bg-gray-700/80"
       style={{ 
         visibility: `${props.sideOpen ? "visible" : "hidden"}`, 
       }}>
@@ -105,13 +105,13 @@ export default function Navigation() {
 
 
   return (
-    <div id="navigation" className="flex flex-wrap lg:px-10 xl:px-40">
+    <div id="navigation" className="flex flex-wrap sm:px-5 lg:px-10 xl:px-40">
       <Title />
       <Sidebar sideOpen={sideOpen} toggle={toggle} />
     
       <div 
         onClick={() => {toggle()}}
-        className="fixed top-10 right-5"
+        className="fixed top-10 left-10"
         style={{
           display: showButton ? "block" : "none"
         }}>

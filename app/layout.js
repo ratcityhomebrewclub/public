@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="flex flex-col justify-between max-w-full px-5 min-h-screen" >
+        <div className="flex flex-col justify-between max-w-full  min-h-screen" >
           <Analytics />
           <Banner />
           <Navigation />

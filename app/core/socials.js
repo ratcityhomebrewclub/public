@@ -8,7 +8,7 @@ export default function Socials() {
     // <div className="container mx-auto px-4">
       <div id="Socials" className="py-2">
         <h2 className="mb-6">Socials</h2>
-        <div className="container mx-auto flex flex-row">
+        <div className="container mx-auto flex flex-row items-center justify-center">
           {socials.map((social) => {
             return (
               <Link key={social.name} href={social.url} className="px-2">

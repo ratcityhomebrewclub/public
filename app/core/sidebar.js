@@ -15,11 +15,11 @@ export default function SideBar() {
       <div id="meetings" className="py-4">
           <div className="container mx-auto">
               <h2 className="mb-6">Meetings</h2>
-              <p>Monthly Club Meetings are usually held on the 3rd Thursday of the month at 6:30pm at Sound Homebrew Supply in Seattle.</p>
+              <p> Monthly Club Meetings are usually held on the 3rd Thursday of the month at 6:30pm at Sound Homebrew Supply in Seattle.</p>
           </div>
       </div>
       <div id="nextevent" className="py-4">
-          <div className="container mx-auto">
+          <div className="container mx-auto flex flex-col">
               <h2 className="mb-6">Upcoming Events</h2>
               <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&bgcolor=%23ffffff&mode=AGENDA&src=cmF0Y2l0eWhvbWVicmV3ZXJzQGdtYWlsLmNvbQ&color=%23D50000" style={calendarStyle}></iframe>
           </div>
