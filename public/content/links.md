@@ -1,6 +1,7 @@
 ## General
 [American Homebrewers Association](https://www.homebrewersassociation.org/)
 [Club Feedback Form](https://forms.gle/NpVfymkNoZVMAhXY9)
+[Club Presentations](https://drive.google.com/drive/folders/1J_FEAIagmbkPFvTo6zcyY8Zm1QCo8i7J)
 [BJCP Style Guidelines](https://www.bjcp.org/bjcp-style-guidelines/)
 [Washington Homebrewers Association](http://www.wahomebrewers.org/)
 

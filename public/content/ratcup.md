@@ -2,6 +2,12 @@
 
 The Rat Cup is our best in show competition trophy that is voted on by attendees at our annual end of year potluck.
 
+## 2025 Winner John Smith
+- Beer Name: You Jest
+- Style: Saison
+
+![John 2025 Rat Cup](/images/ratcup/ratcup_25.jpeg)
+
 ## 2024 Winner Scott Howell
 - Beer Name: Just The Tip
 - Style: Brown Ale with spruce tips
