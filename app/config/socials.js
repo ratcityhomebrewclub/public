@@ -4,7 +4,7 @@ const socials = [{
   "img": "/images/socials/facebook.svg"
 },{
   "name": "WhatsApp",
-  "url": "https://chat.whatsapp.com/KAF2gTXE8IYGCKJX30pKgZ",
+  "url": "https://chat.whatsapp.com/LQEwalRYUwvCcEUsH7RORk",
   "img": "/images/socials/whatsapp.svg"
 },{
   "name": "Instagram",
