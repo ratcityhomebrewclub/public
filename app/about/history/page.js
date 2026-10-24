@@ -1,13 +1,19 @@
-import Markdown from "@/core/markdown";
+import PageHero from 'core/page-hero';
+import Markdown from 'core/markdown';
 
-export default function Links() {
+export const metadata = { title: 'Club History' };
+
+export default function History() {
   return (
-    <main className="flex ">
-      <section id="history" className="py-12">
-        <div className="container mx-auto px-4">
-          <Markdown url="/content/history.md" />
+    <>
+      <PageHero title="Club History" label="About" />
+      <div className="brew-section">
+        <div className="brew-container max-w-3xl">
+          <div className="brew-card-flat p-6 md:p-12">
+            <Markdown file="history.md" />
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </>
   );
 }

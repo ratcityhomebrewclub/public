@@ -1,13 +1,22 @@
-import Markdown from "@/core/markdown";
+import PageHero from 'core/page-hero';
+import Markdown from 'core/markdown';
 
-export default function About() {
+export const metadata = { title: 'Officers' };
+
+export default function Officers() {
   return (
-    <main className="flex ">
-      <section id="officers" className="py-12">
-       <div className="container mx-auto px-4">
-          <Markdown url="/content/officers.md" />
+    <>
+      <PageHero title="Officers" label="About" />
+      <div className="brew-section">
+        <div className="brew-container max-w-2xl">
+          <div className="brew-card-flat p-6 md:p-12">
+            <div className="brew-rule">
+              <span className="brew-label">Leadership</span>
+            </div>
+            <Markdown file="officers.md" />
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </>
   );
 }

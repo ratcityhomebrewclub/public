@@ -1,0 +1,5 @@
+# Google accounts allowed to edit the site at /admin, one email per line.
+# Changes take effect within a minute; no redeploy needed.
+# Note: this repository is public, so these addresses are visible to anyone.
+
+ratcityhomebrewers@gmail.com

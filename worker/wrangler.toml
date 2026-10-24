@@ -1,0 +1,16 @@
+name = "rchb-admin"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# OAuth client ID from Google Cloud Console (same value as admin.googleClientId in app/config/site.js)
+GOOGLE_CLIENT_ID = ""
+# Origins allowed to call this API (the site and local dev)
+ALLOWED_ORIGINS = "https://beta.ratcityhomebrewers.org,https://ratcityhomebrewclub.github.io,http://localhost:3000"
+GITHUB_REPO = "ratcityhomebrewclub/website"
+GITHUB_BRANCH = "main"
+ADMINS_PATH = "admins.txt"
+
+# Secrets (set with `npx wrangler secret put <NAME>`):
+#   GITHUB_TOKEN    fine-grained token, Contents: Read and write on the repo
+#   SESSION_SECRET  long random string, e.g. `openssl rand -hex 32`

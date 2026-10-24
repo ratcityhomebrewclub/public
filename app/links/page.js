@@ -1,19 +1,34 @@
-import Markdown from "@/core/markdown";
-import Socials from "core/socials";
+import PageHero from 'core/page-hero';
+import Markdown from 'core/markdown';
+import Socials from 'core/socials';
 
-
+export const metadata = { title: 'Useful Links' };
 
 export default function Links() {
   return (
-    <main className="flex ">
-      <section id="about" className="py-12">
-        <div className="container mx-auto px-4">
+    <>
+      <PageHero title="Useful Links" />
+      <div className="brew-section">
+        <div className="brew-container max-w-3xl">
+
+          {/* Socials */}
+          <div className="brew-card-flat p-8 mb-6">
             <Socials />
-            <h2 className="mb-6">Useful Links</h2>
-            <p>This page contains a number of links to useful resources!</p>
-            <Markdown url="/content/links.md" />
+          </div>
+
+          {/* Links from markdown */}
+          <div className="brew-card-flat p-6 md:p-10">
+            <div className="brew-rule">
+              <span className="brew-label">Useful Resources</span>
+            </div>
+            <p className="text-stone-400 text-sm mb-6">
+              A curated collection of homebrewing resources, tools, and communities.
+            </p>
+            <Markdown file="links.md" />
+          </div>
+
         </div>
-      </section>
-    </main>
+      </div>
+    </>
   );
 }

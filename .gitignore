@@ -37,3 +37,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# firebase (legacy)
+.firebase/
+
+# wrangler
+.wrangler/
+.dev.vars

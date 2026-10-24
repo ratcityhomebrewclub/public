@@ -1,12 +1,18 @@
+import PageHero from 'core/page-hero';
+
+export const metadata = { title: 'Calculators' };
+
 export default function Calculators() {
   return (
-    <main className="flex">
-      <section id="about" className="py-12">
-        <div className="container mx-auto px-4">
-            <h2 className="mb-6">Calculators</h2>
-            <p>This page contains calculators for brewing!</p>
+    <>
+      <PageHero title="Calculators" />
+      <div className="brew-section">
+        <div className="brew-container max-w-3xl">
+          <div className="brew-card-flat p-6 md:p-12">
+            <p>Brewing calculators are coming soon!</p>
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </>
   );
 }

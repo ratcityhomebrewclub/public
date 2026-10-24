@@ -2,102 +2,262 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   Design Tokens
+   ============================================================ */
 :root {
-  --foreground-rgb: 225, 225, 225;
-  --background-start-rgb: 30, 30, 30;
-  --background-end-rgb: 30, 30, 30;
+  --brew-bg:           #0f0f0f;
+  --brew-surface:      #171717;
+  --brew-card:         #1c1c1c;
+  --brew-border:       #2a2a2a;
+  --brew-amber:        #d97706;
+  --brew-amber-light:  #f59e0b;
+  --brew-amber-glow:   #fbbf24;
+  --brew-cream:        #fef3c7;
+  --brew-text:         #e5e5e5;
+  --brew-muted:        #737373;
+  --brew-green:        #65a30d;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --foreground-rgb: 45, 45, 45;
-    --background-start-rgb: 170, 180, 180;
-    --background-end-rgb: 225, 225, 225;
-  }
+/* ============================================================
+   Base
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  
-
+  background-color: var(--brew-bg);
+  color: var(--brew-text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#header {
-  background-image: url('/images/header-ai-2x.jpeg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position-y: -200px;
-  padding-top: 350px;
-}
-
-#title {
-  color: #dd9933
-}
-
-@layer components {
+/* ============================================================
+   Typography — global defaults
+   ============================================================ */
+@layer base {
   h1 {
-    @apply text-4xl font-semibold pb-5;
-    margin-bottom: 5px;
+    font-family: var(--font-playfair), Georgia, serif;
+    @apply text-4xl md:text-5xl font-bold leading-tight;
+    color: var(--brew-amber-glow);
+    margin-bottom: 1rem;
   }
 
   h2 {
-    @apply text-3xl font-semibold pb-2;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    font-family: var(--font-playfair), Georgia, serif;
+    @apply text-3xl font-bold leading-snug;
+    color: var(--brew-amber-light);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   h3 {
-    @apply text-2xl font-semibold;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    font-family: var(--font-playfair), Georgia, serif;
+    @apply text-2xl font-semibold leading-snug;
+    color: var(--brew-cream);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   h4 {
     @apply text-xl font-semibold;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    color: var(--brew-cream);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    @apply leading-relaxed;
+    color: var(--brew-text);
+  }
+
+  a {
+    color: var(--brew-amber-light);
+    transition: color 0.2s ease;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--brew-amber-glow);
   }
 
   ul {
     list-style-type: disc;
-    margin-left: 30px;
+    margin-left: 1.5rem;
+    @apply space-y-1;
   }
 
   ol {
     list-style-type: decimal;
-    margin-left: 30px;
+    margin-left: 1.5rem;
+    @apply space-y-1;
   }
 }
 
-.link-1 {
-  padding-left: 10px;
+/* ============================================================
+   Component Utilities
+   ============================================================ */
+@layer components {
+
+  /* Card */
+  .brew-card {
+    background: var(--brew-card);
+    border: 1px solid var(--brew-border);
+    border-top: 3px solid var(--brew-amber);
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+
+  .brew-card:hover {
+    box-shadow: 0 8px 32px rgba(217, 119, 6, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* Flat card (no hover lift) */
+  .brew-card-flat {
+    background: var(--brew-card);
+    border: 1px solid var(--brew-border);
+    border-top: 3px solid var(--brew-amber);
+    border-radius: 10px;
+  }
+
+  /* Layout helpers */
+  .brew-section {
+    @apply py-16 px-4 md:px-8;
+  }
+
+  .brew-container {
+    @apply max-w-6xl mx-auto w-full;
+  }
+
+  /* Section label/divider */
+  .brew-label {
+    @apply text-xs uppercase tracking-widest font-semibold;
+    color: var(--brew-amber);
+  }
+
+  .brew-rule {
+    @apply flex items-center gap-4 mb-10;
+  }
+
+  .brew-rule::before,
+  .brew-rule::after {
+    content: '';
+    @apply flex-1 h-px;
+    background: var(--brew-border);
+  }
+
+  /* Buttons */
+  .brew-btn {
+    background: var(--brew-amber);
+    color: #0a0a0a;
+    @apply font-semibold px-6 py-3 rounded-md transition-all duration-200 inline-block cursor-pointer;
+    text-decoration: none;
+  }
+
+  .brew-btn:hover {
+    background: var(--brew-amber-glow);
+    color: #0a0a0a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(251, 191, 36, 0.25);
+    text-decoration: none;
+  }
+
+  .brew-btn-outline {
+    border: 2px solid var(--brew-amber);
+    color: var(--brew-amber);
+    @apply font-semibold px-6 py-3 rounded-md transition-all duration-200 inline-block cursor-pointer;
+    text-decoration: none;
+  }
+
+  .brew-btn-outline:hover {
+    background: var(--brew-amber);
+    color: #0a0a0a;
+    text-decoration: none;
+  }
+
+  /* Badge */
+  .brew-badge {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
+    background: rgba(217, 119, 6, 0.15);
+    border: 1px solid rgba(217, 119, 6, 0.3);
+    color: var(--brew-amber-light);
+  }
+}
+
+/* ============================================================
+   Markdown Styles
+   ============================================================ */
+.markdown {
+  max-width: none;
+}
+
+.markdown h1 { @apply mt-8 mb-4; }
+.markdown h2 { @apply mt-8 mb-3; }
+.markdown h3 { @apply mt-6 mb-2; }
+.markdown h4 { @apply mt-4 mb-2; }
+.markdown p  { @apply mb-4; }
+.markdown ul { @apply mb-4; }
+.markdown ol { @apply mb-4; }
+.markdown li { @apply mb-1; }
+.markdown hr {
+  border: none;
+  border-top: 1px solid var(--brew-border);
+  @apply my-6;
+}
+
+.markdown blockquote {
+  border-left: 3px solid var(--brew-amber);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--brew-muted);
+  font-style: italic;
+}
+
+.markdown a {
+  color: var(--brew-amber-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(245, 158, 11, 0.4);
+}
+
+.markdown a:hover {
+  color: var(--brew-amber-glow);
+  text-decoration-color: var(--brew-amber-glow);
 }
 
 .markdown img {
-  /* width: 30%; */
-  @apply xl:max-w-lg;
-  min-width: "300px";
-  /* max-width: "500px"; */
-  margin-left: auto;
-  margin-right: auto;
+  @apply rounded-lg mx-auto my-6;
+  max-width: min(100%, 520px);
+  border: 1px solid var(--brew-border);
 }
 
+.markdown strong {
+  color: var(--brew-cream);
+  font-weight: 600;
+}
 
+.markdown code {
+  background: var(--brew-surface);
+  border: 1px solid var(--brew-border);
+  @apply rounded px-1.5 py-0.5 text-sm font-mono;
+  color: var(--brew-amber-light);
+}
+
+/* ============================================================
+   Utility
+   ============================================================ */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
-.white-background {
-  background-color: white;
-  padding: 10px;
+/* White background utility (for light sponsor logos) */
+.white-bg {
+  background-color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
 }

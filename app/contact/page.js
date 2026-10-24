@@ -1,38 +1,83 @@
-import Link from "next/link";
+import PageHero from 'core/page-hero';
+import Link from 'next/link';
+
+export const metadata = { title: 'Contact' };
 
 export default function Contact() {
-  const mapStyle = {
-    width: "80%",
-    height: "600px",
-    border: 0,
-    allowfullscreen: "" 
-  }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <section id="contact" className="">
-        <div className="flex flex-col items-center dues mb-10">
-          <h2 className="mb-6">Contact Us</h2>
-          <Link href="mailto:ratcityhomebrewers@gmail.com">Email Us</Link>
-        </div>
-        
-        <div className="flex flex-col items-left justify-between">
-          <h3 className="mb-6">Meetings</h3>
-          <p>The first week of the month we have a club happy hour at a local brewery. Please check out the calendar for date and location as it often changes.</p>
-          <br />
-          <p>Our official meetings are the 3rd Thursday of every month, 6:30PM at Sound Homebrew in Georgetown/SODO.</p>
-          <p>6505 5th Place S, Seattle, WA 98108</p>
-          
-          <h3 className="mt-6">There are some exceptions:</h3>
-          <p>In July & August we sometimes have “social meetings” instead of a formal club meeting.</p>
-          <p>In December we have a holiday party. Usually at a local brewery.</p>
-          <p>And you can often find us around town, you guessed it, enjoying beer at local breweries.</p>
-          <p>For club meetings please bring your own tasting glass (no one likes to drink out of plastic!) and of course your delicious homebrew for sampling!</p>
-        </div>
+    <>
+      <PageHero title="Contact" />
+      <div className="brew-section">
+        <div className="brew-container max-w-4xl">
 
-        <div className="flex flex-col items-center justify-between mt-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5386.293266408721!2d-122.3302345231486!3d47.545474792195805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549041944180fc31%3A0x3fde0dc411a3228a!2sSound%20Homebrew%20Supply!5e0!3m2!1sen!2sus!4v1713313876082!5m2!1sen!2sus" style={mapStyle} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+            {/* Email card */}
+            <div className="brew-card-flat p-8">
+              <div className="brew-rule">
+                <span className="brew-label">Say Hello</span>
+              </div>
+              <p className="text-stone-400 text-sm leading-relaxed mb-6">
+                Questions about the club? Want to visit a meeting before joining?
+                We&apos;d love to hear from you.
+              </p>
+              <Link
+                href="mailto:ratcityhomebrewers@gmail.com"
+                className="brew-btn text-sm"
+              >
+                Email Us
+              </Link>
+            </div>
+
+            {/* Meetings card */}
+            <div className="brew-card-flat p-8">
+              <div className="brew-rule">
+                <span className="brew-label">Meetings</span>
+              </div>
+              <div className="space-y-4 text-stone-400 text-sm leading-relaxed">
+                <p>
+                  The first week of the month we hold a happy hour at a local
+                  brewery — check the calendar for date &amp; location.
+                </p>
+                <p>
+                  Official meetings are the{' '}
+                  <strong className="text-stone-200">
+                    3rd Thursday of every month, 6:30&nbsp;PM
+                  </strong>{' '}
+                  at Future Primitive Brewing in White Center.
+                </p>
+                <p className="text-brew-amber-light font-medium">
+                  9832 14th Ave SW, Seattle, WA 98106
+                </p>
+                <div className="border-t border-brew-border pt-4">
+                  <p className="text-stone-500 font-medium mb-2">Exceptions</p>
+                  <ul className="space-y-1 ml-4 text-xs">
+                    <li>July &amp; August — sometimes social meetings</li>
+                    <li>December — holiday party at a local brewery</li>
+                  </ul>
+                </div>
+                <p className="text-stone-600 text-xs">
+                  Bring your own tasting glass and your homebrew to share!
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Map */}
+          <div className="brew-card-flat overflow-hidden p-4">
+            <iframe
+              src="https://maps.google.com/maps?q=Future%20Primitive%20Brewing%2C%209832%2014th%20Ave%20SW%2C%20Seattle%2C%20WA%2098106&z=15&output=embed"
+              className="w-full rounded-lg"
+              style={{ height: '400px', border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Future Primitive Brewing"
+            />
+          </div>
+
         </div>
-      </section>
-    </main>
+      </div>
+    </>
   );
 }

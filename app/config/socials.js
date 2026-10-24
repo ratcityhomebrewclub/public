@@ -16,4 +16,4 @@ const socials = [{
   "img": "/images/socials/shopify_glyph.svg"
 }]
 
-module.exports = socials;
+export default socials;

@@ -1,31 +1,39 @@
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import Navigation from "./core/navigation";
 import "./globals.css";
 import Footer from "./core/footer";
-import Banner from "./core/banner";
 import Analytics from "./core/analytics";
 
-const inter = Inter({ subsets: ["latin"] });
-// Import the functions you need from the SDKs you need
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 export const metadata = {
-  title: "Rat City Homebrew Club",
-  description: "Rat City Homebrew Club",
+  title: {
+    default: "Rat City Homebrew Club",
+    template: "%s · Rat City Homebrew Club",
+  },
+  description: "Seattle's community of passionate homebrewers — brewing, sharing, and celebrating craft beer.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <div className="flex flex-col justify-between max-w-full  min-h-screen" >
-          <Analytics />
-          <Banner />
-          <Navigation />
-          <div className="flex justify-center">
-            {children}
-          </div>
-          <Footer />
-        </div>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="flex flex-col min-h-screen">
+        <Analytics />
+        <Navigation />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
