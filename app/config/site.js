@@ -6,7 +6,7 @@ const site = {
   email: 'ratcityhomebrewers@gmail.com',
   repo: {
     owner: 'ratcityhomebrewclub',
-    name: 'website',
+    name: 'public',
     branch: 'main',
   },
   contentDir: 'content',
@@ -15,7 +15,7 @@ const site = {
     // e.g. https://rchb-admin.<account>.workers.dev (env var overrides for local dev)
     apiUrl: process.env.NEXT_PUBLIC_ADMIN_API_URL || '',
     // e.g. 1234-abc.apps.googleusercontent.com
-    googleClientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '',
+    googleClientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '741357708365-d8sohhpa76791p67fmjmp559fmj8u0g0.apps.googleusercontent.com',
     adminsFile: 'admins.txt',
   },
   uploadsDir: 'public/images/uploads',

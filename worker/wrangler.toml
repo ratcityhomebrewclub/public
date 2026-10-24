@@ -4,10 +4,10 @@ compatibility_date = "2026-09-01"
 
 [vars]
 # OAuth client ID from Google Cloud Console (same value as admin.googleClientId in app/config/site.js)
-GOOGLE_CLIENT_ID = ""
+GOOGLE_CLIENT_ID = "741357708365-d8sohhpa76791p67fmjmp559fmj8u0g0.apps.googleusercontent.com"
 # Origins allowed to call this API (the site and local dev)
 ALLOWED_ORIGINS = "https://beta.ratcityhomebrewers.org,https://ratcityhomebrewclub.github.io,http://localhost:3000"
-GITHUB_REPO = "ratcityhomebrewclub/website"
+GITHUB_REPO = "ratcityhomebrewclub/public"
 GITHUB_BRANCH = "main"
 ADMINS_PATH = "admins.txt"
 

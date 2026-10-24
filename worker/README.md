@@ -31,7 +31,7 @@ Sessions last 12 hours.
 ### 2. GitHub token for the Worker
 
 Create a [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new)
-with resource owner `ratcityhomebrewclub`, access to only the `website`
+with resource owner `ratcityhomebrewclub`, access to only the `public`
 repository, and **Contents: Read and write**. Pick a long expiry, or use an
 account set up for the club, and note when it expires.
 
