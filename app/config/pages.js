@@ -6,6 +6,7 @@ const pages = [
   { slug: 'history',  title: 'Club History', href: '/about/history',  file: 'history.md' },
   { slug: 'awards',   title: 'Awards',       href: '/awards',         file: 'awards.md' },
   { slug: 'ratcup',   title: 'The Rat Cup',  href: '/ratcup',         file: 'ratcup.md' },
+  { slug: 'mousecup', title: 'The Mouse Cup', href: '/mousecup',      file: 'mousecup.md' },
   { slug: 'links',    title: 'Useful Links', href: '/links',          file: 'links.md' },
 ];
 

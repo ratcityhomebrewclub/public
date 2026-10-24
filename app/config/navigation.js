@@ -9,6 +9,7 @@ const links = [
   { name: 'Membership',   href: '/membership',     level: 0 },
   { name: 'Awards',       href: '/awards',         level: 0 },
   { name: 'The Rat Cup',  href: '/ratcup',         level: 0 },
+  { name: 'The Mouse Cup', href: '/mousecup',      level: 0 },
   { name: 'Useful Links', href: '/links',          level: 0 },
   { name: 'Contact',      href: '/contact',        level: 0 },
 ];

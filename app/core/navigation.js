@@ -48,11 +48,11 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {primaryLinks.map((link) => {
               const children = childLinks(link);
               const active = pathname === link.href || children.some((c) => c.href === pathname);
-              const cls = `px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+              const cls = `px-2 xl:px-3 py-2 rounded-md text-sm whitespace-nowrap font-medium transition-all duration-200 ${
                 active
                   ? 'text-brew-amber-glow bg-brew-amber/10'
                   : 'text-stone-300 hover:text-brew-amber-light hover:bg-brew-amber/5'
