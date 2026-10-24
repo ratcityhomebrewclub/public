@@ -13,7 +13,7 @@ const site = {
   // Admin sign-in (see worker/README.md). Both values are public.
   admin: {
     // e.g. https://rchb-admin.<account>.workers.dev (env var overrides for local dev)
-    apiUrl: process.env.NEXT_PUBLIC_ADMIN_API_URL || '',
+    apiUrl: process.env.NEXT_PUBLIC_ADMIN_API_URL || 'https://rchb-admin.ratcityhomebrewers.workers.dev',
     // e.g. 1234-abc.apps.googleusercontent.com
     googleClientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '741357708365-d8sohhpa76791p67fmjmp559fmj8u0g0.apps.googleusercontent.com',
     adminsFile: 'admins.txt',
