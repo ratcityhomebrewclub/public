@@ -6,7 +6,7 @@ The club officers for 2026:
 Christian Holton
 
 ### Vice President
-Will Proudfoot
+Dan Dupree
 
 ### Secretary
 Tas Philp
