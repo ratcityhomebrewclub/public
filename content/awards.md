@@ -1,3 +1,62 @@
+# 2026 Awards
+
+### [Pedal to the Kettle 2026](https://beerawardsplatform.com/pedal-to-the-kettle)
+
+#### Camille Saison
+Brewer: Douglas J McDonnal
+Style: 29X: Belgian Fruit and Spice Beer
+Medal: Gold
+
+#### Yippee it's Dark!
+Brewer: John Smith
+Style: 2C: International Dark Lager
+Medal: Bronze
+
+### [Cascade Brewers Cup 2026](https://beerawardsplatform.com/cascade-brewers-cup-2026)
+
+#### Chili Chocolatta
+Brewer: John Smith & Scott Howell
+Style: 30A: Spice, Herb, or Vegetable Beer
+Medal: Silver
+
+#### Chocolatey Adventure
+Brewer: John Smith & Scott Howell
+Style: 16A: Sweet Stout
+Medal: Silver
+
+# 2025 Awards
+
+### [Lights Out! Dark Beers Only 2025](https://reggiebeer.com/ReggieWeb.php?Web=1000948)
+
+#### Yup, its dark
+Brewer: John Smith
+Style: 3D: Czech Dark Lager
+Medal: Bronze
+
+### [Best of the Bay 2025](https://bellinghamhomebrewersguild.org/bestofthebay/past-winners/BotB2025)
+
+#### 3 Nails
+Brewer: John Smith & Dan Dupré
+Style: 9C: Baltic Porter
+Medal: Gold
+
+#### Holler Blonde
+Brewer: John Smith
+Style: 18A: Blonde Ale
+Medal: Bronze
+
+### [Cascade Brewers Cup 2025](https://beerawardsplatform.com/cascade-brewers-cup-2025/results)
+
+#### Yippee it's Dark!
+Brewer: John Smith
+Style: 8B: Schwarzbier
+Medal: Gold
+
+#### Soren's Vossaøl
+Brewer: Soren Laulainen
+Style: 34C: Experimental Beer
+Medal: Bronze
+
 # 2024 Awards
 
 ### [2024 Oregon Brew Crew Fall Classic](https://fallclassic.brewingcompetitions.com/)
@@ -70,8 +129,9 @@ Brewer: Ryan Kobert
 Style: 5A - German Leichtbier
 Medal: Silver
 
-# 2023
-### [Lights Out! Dark Beers Only](https://reggiebeer.com/ReggieWeb.php?Web=1000794)
+# 2023 Awards
+
+### [Lights Out! Dark Beers Only 2023](https://reggiebeer.com/ReggieWeb.php?Web=1000794)
 
 #### Mildly Burien
 Brewer: Scott Howell
@@ -92,3 +152,66 @@ Medal: Bronze
 Brewer: Jon Newton
 Style: 28C: Wild Specialty Beer
 Medal: Bronze
+
+### [Best of the Bay 2023](https://bellinghamhomebrewersguild.org/bestofthebay/past-winners/BotB2023Archive)
+
+#### Burien Schwarzbier
+Brewer: Scott Howell
+Style: 8B: Schwarzbier
+Medal: Gold
+
+#### Burien Mild
+Brewer: Scott Howell
+Style: 13A: Dark Mild
+Medal: Silver
+
+### [Cascade Brewers Cup 2023](https://www.cascadebrewersguild.com/bcoem/index.php)
+
+#### Overnight Sensation
+Brewer: John Smith & Greg MacAulay
+Style: 1C: Cream Ale
+Medal: Silver
+
+#### Burien's Stout
+Brewer: Scott Howell
+Style: 33A: Wood-Aged Beer
+Medal: Bronze
+
+# 2022 Awards
+
+### [Lights Out! Dark Beers Only 2022](https://reggiebeer.com/ReggieWeb.php?Web=1000733)
+
+#### Burien Stout V1
+Brewer: Scott Howell
+Style: 33A: Wood-Aged Beer
+Medal: Gold
+Notes: Also took 3rd place Best of Show.
+
+### [Pacific Women Brewers' Cup 2022](https://reggiebeer.com/ReggieWeb.php?Web=1000693)
+
+#### Ickle Me Pickle Me
+Brewer: Katherine Gooding & Alex Ingalls
+Style: 34C: Experimental Beer
+Medal: Gold
+Notes: Also received an honorable mention in Best of Show.
+
+# 2021 Awards
+
+### [Lights Out! Dark Beers Only 2021](https://reggiebeer.com/ReggieWeb.php?Web=1000638)
+
+#### Yippee it's dark!
+Brewer: John Smith
+Style: 8B: Schwarzbier
+Medal: Gold
+
+### [Pacific Women Brewers' Cup 2021](https://reggiebeer.com/ReggieWeb.php?Web=1000620)
+
+#### Specious Kombeercha
+Brewer: Katherine Gooding & Alex Ingalls
+Style: 34C: Experimental Beer
+Medal: Silver
+
+#### Birdhouse Dark Lager
+Brewer: Katherine Gooding
+Style: 2C: International Dark Lager
+Medal: Silver
