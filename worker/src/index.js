@@ -15,6 +15,8 @@ const MAX_UPLOAD_BYTES = 5 * 1024 * 1024;
 const UPLOADS_DIR = 'public/images/uploads';
 const EDITABLE_PATH = /^content\/[a-z0-9][a-z0-9-]*\.md$/;
 const IMAGE_EXTS = ['png', 'jpg', 'jpeg', 'gif', 'webp']; // no SVG: it can carry script
+const MAX_ADMINS = 100;
+const EMAIL = /^[^\s@#]+@[^\s@#]+\.[^\s@#]+$/;
 
 export class HttpError extends Error {
   constructor(status, message, extra = {}) {
@@ -38,6 +40,8 @@ function bytesToB64url(bytes) {
   for (const b of bytes) bin += String.fromCharCode(b);
   return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
+
+const bytesToB64 = (bytes) => bytesToB64url(bytes).replace(/-/g, '+').replace(/_/g, '/').padEnd(Math.ceil(bytes.length / 3) * 4, '=');
 
 const b64urlJson = (s) => JSON.parse(new TextDecoder().decode(b64urlToBytes(s)));
 
@@ -208,8 +212,37 @@ async function admins(gh, env) {
 
 async function requireAdmin(gh, env, email) {
   if (!(await admins(gh, env)).has(email)) {
-    throw new HttpError(403, `${email} is not on the admin list. Ask an officer to add you to admins.txt.`);
+    throw new HttpError(403, `${email} is not on the admin list. Ask an existing admin to add you.`);
   }
+}
+
+// Rewrites admins.txt with `emails`, keeping the leading comment block and
+// any inline comment on lines whose email is kept.
+export function formatAdmins(oldText, emails) {
+  const lines = oldText.split('\n');
+  const header = [];
+  for (const line of lines) {
+    if (!line.trim().startsWith('#') && line.trim()) break;
+    header.push(line);
+  }
+  while (header.length && !header.at(-1).trim()) header.pop();
+  const existing = new Map();
+  for (const line of lines) {
+    const email = line.replace(/#.*/, '').trim().toLowerCase();
+    if (email.includes('@') && !existing.has(email)) existing.set(email, line.trim());
+  }
+  const body = emails.map((e) => existing.get(e) || e);
+  return [...header, ...(header.length ? [''] : []), ...body].join('\n') + '\n';
+}
+
+export function validateAdmins(emails, self) {
+  if (!Array.isArray(emails)) throw new HttpError(400, 'Missing admin list.');
+  const list = [...new Set(emails.map((e) => String(e).trim().toLowerCase()).filter(Boolean))];
+  const bad = list.find((e) => !EMAIL.test(e));
+  if (bad) throw new HttpError(400, `"${bad}" is not a valid email address.`);
+  if (!list.includes(self)) throw new HttpError(400, 'You can\'t remove yourself from the admin list.');
+  if (list.length > MAX_ADMINS) throw new HttpError(400, `At most ${MAX_ADMINS} admins.`);
+  return list;
 }
 
 /* ---------- uploads ---------- */
@@ -284,6 +317,29 @@ async function route(request, env, fetchImpl) {
     if (typeof content !== 'string') throw new HttpError(400, 'Missing content.');
     const res = await gh.putFile(path, content, String(message || `Update ${path} via admin`).slice(0, 200), sha, author);
     return { content: { sha: res.content.sha }, commit: { html_url: res.commit.html_url } };
+  }
+
+  if (key === 'GET /admins') {
+    const file = await gh.getFile(env.ADMINS_PATH || 'admins.txt');
+    return { emails: [...parseAdmins(file.text)], sha: file.sha };
+  }
+
+  if (key === 'PUT /admins') {
+    const { emails, sha } = await readJson(request);
+    const list = validateAdmins(emails, session.email);
+    const path = env.ADMINS_PATH || 'admins.txt';
+    const file = await gh.getFile(path);
+    if (sha !== file.sha) throw new HttpError(409, 'The admin list changed since you opened it.', { conflict: true });
+    const before = parseAdmins(file.text);
+    const added = list.filter((e) => !before.has(e));
+    const removed = [...before].filter((e) => !list.includes(e));
+    if (!added.length && !removed.length) return { emails: list, sha: file.sha };
+    const summary = [added.length && `add ${added.join(', ')}`, removed.length && `remove ${removed.join(', ')}`]
+      .filter(Boolean).join('; ');
+    const content = bytesToB64(enc.encode(formatAdmins(file.text, list)));
+    const res = await gh.putFile(path, content, `Admins: ${summary}`.slice(0, 200), file.sha, author);
+    adminsCache = { emails: new Set(list), expires: Date.now() + ADMINS_TTL };
+    return { emails: list, sha: res.content.sha };
   }
 
   if (key === 'POST /upload') {

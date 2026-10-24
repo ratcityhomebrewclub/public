@@ -11,7 +11,7 @@ import {
   isAuthError, isConflict, publicUrl, putFile, uploadImage,
 } from './api';
 
-function Notice({ tone = 'info', children }) {
+export function Notice({ tone = 'info', children }) {
   const tones = {
     info: 'border-brew-border bg-brew-surface text-[#e5e5e5]',
     success: 'border-lime-800 bg-lime-950/40 text-lime-200',

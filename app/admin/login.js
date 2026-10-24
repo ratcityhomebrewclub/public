@@ -95,7 +95,8 @@ export default function Login({ onSignIn, initialError = '' }) {
         )}
 
         <p className="text-xs text-brew-muted border-t border-brew-border pt-4">
-          Need access? Ask an officer with GitHub access to add your email to{' '}
+          Need access? Ask an existing admin to add your email under <strong>Admins</strong>, or
+          edit{' '}
           <a href={adminsFileUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
             {site.admin.adminsFile}
           </a>{' '}

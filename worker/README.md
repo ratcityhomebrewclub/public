@@ -7,9 +7,9 @@ credential. This Worker:
 2. Checks the email against [`admins.txt`](../admins.txt), read from the repo
    on every request (cached for 60 seconds), so removing someone takes effect
    within a minute.
-3. Reads and commits `content/*.md` and image uploads with its own GitHub
-   token. Commits are authored as the signed-in officer. Nothing else in the
-   repo can be changed through it, including `admins.txt`.
+3. Reads and commits `content/*.md`, image uploads, and `admins.txt` (from
+   the **Admins** tab) with its own GitHub token. Commits are authored as the
+   signed-in officer. Nothing else in the repo can be changed through it.
 
 Sessions last 12 hours.
 
@@ -56,8 +56,10 @@ In `app/config/site.js`, set `admin.apiUrl` to the Worker URL and
 
 ## Managing admins
 
-Edit [`admins.txt`](../admins.txt) on GitHub: one Google account email per
-line, `#` for comments. The repository is public, so the list is too.
+Use the **Admins** tab on `/admin`, or edit [`admins.txt`](../admins.txt) on
+GitHub: one Google account email per line, `#` for comments. Any admin can add
+or remove others, but not themselves. The repository is public, so the list is
+too.
 
 ## Tests and local development
 

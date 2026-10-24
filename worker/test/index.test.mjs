@@ -1,7 +1,7 @@
 // Run with: node --test worker/test/*.test.mjs
 import { test, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
-import { handle, parseAdmins, resetCaches, signSession } from '../src/index.js';
+import { formatAdmins, handle, parseAdmins, resetCaches, signSession } from '../src/index.js';
 
 const CLIENT_ID = 'client-123.apps.googleusercontent.com';
 const env = {
@@ -171,6 +171,50 @@ test('uploads images under a fresh name and refuses other types', async () => {
   assert.equal((await call('POST', '/upload', { token, body: { name: 'x.svg', content: 'AAAA' } })).status, 400);
   const big = 'A'.repeat(Math.ceil((5 * 1024 * 1024 + 10) / 3) * 4);
   assert.equal((await call('POST', '/upload', { token, body: { name: 'x.png', content: big } })).status, 413);
+});
+
+test('formatAdmins keeps the header and inline comments', () => {
+  const text = '# officers\n# public\n\nofficer@example.com  # pres\n\nOther@Example.com\n';
+  assert.equal(formatAdmins(text, ['officer@example.com', 'new@example.com']),
+    '# officers\n# public\n\nofficer@example.com  # pres\nnew@example.com\n');
+  assert.equal(formatAdmins('a@b.com\n', ['a@b.com']), 'a@b.com\n');
+});
+
+test('admins can view and change the admin list', async () => {
+  const token = await session();
+  const got = await call('GET', '/admins', { token });
+  assert.deepEqual(got.body, { emails: ['officer@example.com', 'other@example.com'], sha: 'a' });
+
+  const put = await call('PUT', '/admins', { token, body: { emails: ['officer@example.com', ' New@Example.com '], sha: 'a' } });
+  assert.equal(put.status, 200);
+  assert.deepEqual(put.body.emails, ['officer@example.com', 'new@example.com']);
+  assert.equal(files['admins.txt'].text, '# officers\n\nofficer@example.com  # pres\nnew@example.com\n');
+  const commit = JSON.parse(calls.at(-1).body);
+  assert.equal(commit.message, 'Admins: add new@example.com; remove other@example.com');
+  assert.deepEqual(commit.author, { name: 'Officer', email: 'officer@example.com' });
+
+  // Takes effect right away: the removed admin is locked out, the new one is in.
+  assert.equal((await call('GET', '/session', { token: await session('other@example.com') })).status, 403);
+  assert.equal((await call('GET', '/session', { token: await session('new@example.com') })).status, 200);
+
+  const stale = await call('PUT', '/admins', { token, body: { emails: ['officer@example.com'], sha: 'a' } });
+  assert.equal(stale.status, 409);
+  assert.equal(stale.body.conflict, true);
+});
+
+test('admin list changes are validated', async () => {
+  const token = await session();
+  const bad = [
+    { emails: ['other@example.com'], sha: 'a' }, // removes yourself
+    { emails: [], sha: 'a' },
+    { emails: ['officer@example.com', 'not-an-email'], sha: 'a' },
+    { emails: ['officer@example.com', 'x@y.com # sneaky'], sha: 'a' },
+    { emails: 'officer@example.com', sha: 'a' },
+  ];
+  for (const body of bad) {
+    assert.equal((await call('PUT', '/admins', { token, body })).status, 400, JSON.stringify(body));
+  }
+  assert.equal(files['admins.txt'].sha, 'a');
 });
 
 test('CORS headers only for allowed origins', async () => {

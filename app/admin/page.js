@@ -5,6 +5,7 @@ import pages from 'config/pages';
 import site from 'config/site';
 import Login from './login';
 import Editor from './editor';
+import Admins from './admins';
 import { checkSession, clearSession, configured, loadSession, repoSlug, repoUrl, saveSession, signIn as createSession } from './api';
 
 function PageList({ onSelect }) {
@@ -53,6 +54,7 @@ export default function AdminPage() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState('');
   const [selected, setSelected] = useState(null);
+  const [view, setView] = useState('pages');
   const dirtyRef = useRef(false);
 
   // Restore a saved session, if it still works.
@@ -92,7 +94,16 @@ export default function AdminPage() {
     setToken(null);
     setUser(null);
     setSelected(null);
+    setView('pages');
     setStatus('signedOut');
+  }
+
+  function go(next) {
+    if (next === view && !selected) return;
+    if (dirtyRef.current && !window.confirm('You have unsaved changes. Leave anyway?')) return;
+    dirtyRef.current = false;
+    setSelected(null);
+    setView(next);
   }
 
   const onDirtyChange = useCallback((d) => {
@@ -138,7 +149,23 @@ export default function AdminPage() {
               </div>
             </header>
 
-            {page ? (
+            <nav className="flex gap-2 mb-6" aria-label="Admin sections">
+              {[['pages', 'Pages'], ['admins', 'Admins']].map(([id, label]) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => go(id)}
+                  aria-current={view === id ? 'page' : undefined}
+                  className={`${view === id ? 'brew-btn' : 'brew-btn-outline'} px-4 py-1.5 text-sm`}
+                >
+                  {label}
+                </button>
+              ))}
+            </nav>
+
+            {view === 'admins' ? (
+              <Admins token={token} user={user} onDirtyChange={onDirtyChange} />
+            ) : page ? (
               <Editor
                 key={page.slug}
                 token={token}

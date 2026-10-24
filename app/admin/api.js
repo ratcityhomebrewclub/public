@@ -96,6 +96,13 @@ export const signIn = (credential) => request('/session', { method: 'POST', body
 // Resolves to { user } if the session is valid and the email is still an admin.
 export const checkSession = (token) => request('/session', { token });
 
+/* ---------- admins ---------- */
+
+// Resolves to { emails, sha }.
+export const getAdmins = (token) => request('/admins', { token });
+
+export const putAdmins = (token, emails, sha) => request('/admins', { method: 'PUT', token, body: { emails, sha } });
+
 /* ---------- files ---------- */
 
 export const getFile = (token, path) => request(`/file?path=${encodeURIComponent(path)}`, { token });

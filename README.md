@@ -26,7 +26,7 @@ Edit them either directly in git, or through the **admin page** at `/admin`
 (also linked in the footer):
 
 - Officers sign in with Google. Only emails listed in [`admins.txt`](admins.txt)
-  are allowed in.
+  are allowed in; admins can manage that list from the **Admins** tab.
 - Saving commits to `main` as that officer, and the site redeploys in a minute
   or two.
 - Images uploaded from the admin page go to `public/images/uploads/`.
